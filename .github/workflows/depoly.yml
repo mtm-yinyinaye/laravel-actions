@@ -62,7 +62,7 @@ jobs:
         server: ${{ fromJson(needs.create-deployment-artifacts.outputs.DEPLOYMENT_MATRIX) }}
         
     steps:
-      - name: Download rtifact
+      - name: Download artifact
         uses: actions/download-artifact@v3
         with:
           name: app-build
