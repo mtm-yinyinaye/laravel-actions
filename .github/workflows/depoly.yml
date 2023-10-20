@@ -10,7 +10,7 @@ on:
       target_branch:
         description: Select Branch For Depoly
         required: true
-        default: deploy-app
+        default: main
         
 jobs:
   create-deployment-artifacts:
