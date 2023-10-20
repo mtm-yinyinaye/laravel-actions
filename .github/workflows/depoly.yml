@@ -1,1 +1,24 @@
+# workflows name show in action tag
 name: Depoly Application
+
+# trigger for run workflow 
+on:
+  workflow_dispatch:
+    inputs:
+      target_branch:
+        description: Select Branch For Depoly
+        required: true
+        default: develop
+        
+jobs:
+  create-deployment-artifacts:
+    name: Create Depolyment Artifacts
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout The Repository
+        uses: actions/checkout@v3
+      - name: Compile CSS and Javascript
+        run: |
+          npm install
+          npm run prod
