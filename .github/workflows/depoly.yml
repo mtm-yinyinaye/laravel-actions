@@ -1,6 +1,8 @@
 # workflows name show in action tag
 name: Depoly Application
 
+run-name: Depoly
+
 # trigger for run workflow 
 on:
   workflow_dispatch:
@@ -8,7 +10,7 @@ on:
       target_branch:
         description: Select Branch For Depoly
         required: true
-        default: develop
+        default: deploy-app
         
 jobs:
   create-deployment-artifacts:
