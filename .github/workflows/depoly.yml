@@ -36,5 +36,5 @@ jobs:
           aws deploy create-deployment \
           --application-name laravel-app-sample \
           --deployment-group-name laravel-sample-gp-name \
-          --deployment-config-name CodeDeployDefault.OneAtAtime \
+        # --deployment-config-name CodeDeployDefault.OneAtAtime \
           --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
