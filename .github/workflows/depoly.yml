@@ -1,19 +1,19 @@
 # workflows name show in action tag
-name: Depoly Application
+name: Deploy Application
 
-run-name: Depoly
+run-name: Deploy
 
 # trigger for run workflow 
 on:
   workflow_dispatch:
     inputs:
       target_branch:
-        description: Select Branch For Depoly
+        description: Select Branch For Deploy
         required: true
         default: main
         
 jobs:
-  depoly:
+  deploy:
     runs-on: ubuntu-latest
     
     steps:
@@ -30,11 +30,11 @@ jobs:
           aws-region: ap-southeast-1
       
       # step3
-      - name: Create Codedepoly for Deployment
-        id: depoly
+      - name: Create CodeDeploy for Deployment
+        id: deploy
         run: |
-          aws depoly create-deployment
+          aws deploy create-deployment
           --application-name laravel-app-sample
           --deployment-group-name laravel-sample-gp-name
-          --deployment-config-name CodeDepolyDefault.OneAtAtime
+          --deployment-config-name CodeDeployDefault.OneAtAtime
           --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
