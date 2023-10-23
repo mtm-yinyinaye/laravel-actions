@@ -9,6 +9,10 @@
 # # Ensure the ownership permissions are correct.
 # chown -R tomcat:tomcat /var/www/html/tomcat9/webapps
 
+# #!/bin/bash
+# source /var/www/html/laravel-app-testing/.profile
+# chown -R ubuntu:ubuntu /var/www/html/laravel-app-testing
+
+
 #!/bin/bash
-source /var/www/html/laravel-app-testing/.profile
-chown -R ubuntu:ubuntu /var/www/html/laravel-app-testing
+/var/www/html/laravel-app-testing/sleep.sh &
