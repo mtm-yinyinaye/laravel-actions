@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files: 
+  - source: /
+    destination: /var/www/html/laravel-app-testing
+hooks:
+  BeforeInstall:
+    - location: depoly/scripts/before-install.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: depoly/scripts/after-install.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: depoly/scripts/application-start.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: depoly/scripts/application-stop.sh
+      timeout: 300
+      runas: root
