@@ -16,7 +16,7 @@ hooks:
     - location: depoly/scripts/application-start.sh
       timeout: 300
       runas: root
-  ApplicationStop:
-    - location: depoly/scripts/application-stop.sh
-      timeout: 300
-      runas: root
+  # ApplicationStop:
+  #   - location: depoly/scripts/application-stop.sh
+  #     timeout: 300
+  #     runas: root
